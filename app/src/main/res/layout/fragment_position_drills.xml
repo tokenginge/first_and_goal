@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBlack"
+    tools:context=".position_drills">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="3dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:background="@color/colorBlack"
+        app:fontFamily="@font/twenty"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="-20dp"
+        android:padding="2dp"
+        android:text="Position"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        app:fontFamily="@font/twenty" />
+
+    <Button
+        android:id="@+id/btn_OL"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Offensive Linemen"
+        android:background="@drawable/ol"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        app:fontFamily="@font/twenty"/>
+
+    <Button
+        android:id="@+id/btn_QBs"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:textColor="@android:color/white"
+        app:fontFamily="@font/twenty"
+        android:layout_marginTop="8dp"
+        android:textSize="40sp"
+        android:text="Quaterbacks"
+        android:background="@drawable/qb"/>
+
+
+    <Button
+        android:id="@+id/btn_Run_backs"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="150dp"
+        android:text="Running Backs"
+        android:background="@drawable/rb"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        app:fontFamily="@font/twenty" />
+
+    <Button
+        android:id="@+id/btn_wide_rec"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Wide Receivers"
+        android:background="@drawable/wr"
+        android:layout_marginTop="8dp"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        app:fontFamily="@font/twenty"/>
+
+    <Button
+        android:id="@+id/btn_TE"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        app:fontFamily="@font/twenty"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/te"
+        android:text="Tight Ends"/>
+
+    <Button
+        android:layout_marginTop="8dp"
+        android:id="@+id/btn_DL"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Defensive Linemen"
+        android:background="@drawable/dl"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        app:fontFamily="@font/twenty"/>
+
+
+    <Button
+        android:id="@+id/btn_DB"
+        android:background="@drawable/db"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Defensive Backs"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        app:fontFamily="@font/twenty"/>
+
+
+    <Button
+        android:id="@+id/btn_LBS"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        app:fontFamily="@font/twenty"
+        android:layout_marginTop="8dp"
+        android:text="Linebackers"
+        android:background="@drawable/lb"/>
+
+
+
+
+
+
+
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:id="@+id/profile">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginLeft="120dp"
+        android:padding="10dp"
+        android:textSize="50sp"
+        app:fontFamily="@font/twenty"
+        android:text="Profile"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_Edit"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBlack"
+        android:textColor="@android:color/white"
+        android:text="Edit"
+        android:textSize="20sp"
+        app:fontFamily="@font/twenty"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/colorAccent"
+        android:text="Name"
+        android:textSize="30sp"
+        app:fontFamily="@font/twenty" />
+
+    <TextView
+        android:id="@+id/prof_name"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        app:fontFamily="@font/twenty"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        app:fontFamily="@font/twenty"
+        android:layout_marginTop="180dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/prof_age"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:inputType="number"
+        app:fontFamily="@font/twenty"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Height"
+        android:textSize="30sp"
+        app:fontFamily="@font/twenty"
+        android:layout_marginTop="260dp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/prof_height"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:inputType="number"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:fontFamily="@font/twenty"/>
+
+    <TextView
+        android:id="@+id/weight_dif"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginLeft="190dp"
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:fontFamily="@font/twenty"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:textSize="30sp"
+        app:fontFamily="@font/twenty"
+        android:layout_marginTop="340dp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/prof_weight"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:fontFamily="@font/twenty"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        app:fontFamily="@font/twenty"
+        android:layout_marginTop="420dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/prof_team"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:fontFamily="@font/twenty"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Position"
+        android:textSize="30sp"
+        android:textColor="@color/colorAccent"
+        app:fontFamily="@font/twenty"
+        android:layout_marginTop="500dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:id="@+id/prof_pos"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
+        android:inputType="text"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        app:fontFamily="@font/twenty"/>
+
+</FrameLayout>

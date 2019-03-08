@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.first_and_goal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature
+        android:name="@string/step_detector"
+        android:required="true" />
+    <uses-feature
+        android:name="@string/step_counter"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="First &amp; Goal"
+        android:largeHeap="true"
+        android:persistent="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:replace="android:label">
+        <activity android:name=".splashscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".home" />
+        <activity android:name=".signup" />
+        <activity android:name=".login" />
+        <activity android:name=".forgotpassword" />
+        <activity android:name=".OL_Drills" />
+        <activity android:name=".Running" />
+        <activity android:name=".DL_drills" />
+        <activity android:name=".RB_Drills" />
+        <activity android:name=".WR_Drills" />
+        <activity android:name=".DB_Drills" />
+        <activity android:name=".TE_Drills" />
+        <activity android:name=".LB_Drills" />
+        <activity android:name=".QB_Drills" />
+        <activity android:name=".post_splash"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:background="@color/colorBlack"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/logo"
+            android:layout_marginStart="115dp" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_marginTop="220dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                app:fontFamily="@font/twenty"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="260dp"
+            android:layout_marginBottom="250dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@android:color/white">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textColorHint="@android:color/white"
+                android:inputType="textPassword"
+                android:textColor="@android:color/white"
+                app:fontFamily="@font/twenty" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/sign_up_button"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/rounded_button"
+            android:text="Register"
+            android:textColor="@android:color/white"
+            app:fontFamily="@font/twenty"
+            android:textStyle="bold"
+            android:layout_marginStart="60dp" />
+
+        <Button
+            android:id="@+id/btn_reset_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+            android:background="@null"
+            android:text="Forgot your password?"
+            android:textColor="@android:color/white"
+            app:fontFamily="@font/twenty"/>
+
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450dp"
+            android:background="@null"
+            android:text="Already registered? Log in"
+            android:textColor="@android:color/white"
+            app:fontFamily="@font/twenty"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|bottom"
+        android:visibility="gone"/>
+
+</android.support.constraint.ConstraintLayout>

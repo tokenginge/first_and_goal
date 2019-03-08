@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorBlack">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="118dp"
+            android:layout_marginLeft="120dp"
+
+            android:text="Drills"
+            android:textColor="@android:color/white"
+            android:textSize="50sp"
+            app:fontFamily="@font/twenty" />
+
+    <Button
+        android:id="@+id/btn_warm_up"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/warm"
+        android:text="Warm up"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        app:fontFamily="@font/twenty" />
+
+
+
+
+    <Button
+        android:id="@+id/btn_agility"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/agility"
+        android:text="Agility"
+        app:fontFamily="@font/twenty"
+        android:textSize="50sp"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_Speed"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:text="Speed"
+        android:background="@drawable/speed"
+        app:fontFamily="@font/twenty"
+        android:textSize="50sp"
+        android:textColor="@android:color/white"
+        />
+
+    <Button
+        android:id="@+id/btn_Position"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:textSize="50sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/pos"
+        android:text="Position"
+        app:fontFamily="@font/twenty"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
