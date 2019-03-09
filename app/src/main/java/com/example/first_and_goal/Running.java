@@ -2,6 +2,7 @@ package com.example.first_and_goal;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -13,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -80,7 +82,8 @@ protected void onCreate(Bundle savedInstanceState){
     btn_home.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.flContent, new home_frag()).commit();
+
+            startActivity (new Intent(Running.this, home.class));
         }
     });
 
