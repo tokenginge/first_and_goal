@@ -29,6 +29,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Date;
@@ -42,7 +43,8 @@ public class profile2 extends Fragment {
     private static final String KEY_TEAM = "Team";
     private static final String KEY_POSITION = "Position";
     private static final String KEY_TARGET_WEIGHT = "Target Weight";
-    private SimpleDateFormat sdf = new SimpleDateFormat ("dd:mm");
+    private static final String KEY_WEIGHT_DATE = "Date";
+
 
 
     private EditText mName;
@@ -54,6 +56,7 @@ public class profile2 extends Fragment {
     final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private DocumentReference notref = db.collection(user.getEmail()).document("Profile");
     private DatabaseReference dbref = db2.getReference(user.getUid()).child("Profile").child("Weight");
+   private DocumentReference weightHis;
     private DocumentReference noteref2= db.collection(user.getEmail()).document("Profile").collection("Weight").document("Target Weight");
 
     @Override
@@ -82,6 +85,7 @@ public class profile2 extends Fragment {
                 String weight = mWeight.getText().toString();
                 String team = mTeam.getText().toString();
                 String position = mPosition.getText().toString();
+                Date date = new SimpleDateFormat().get2DigitYearStart();
               int x = (int) new Date().getTime();
                 int y = Integer.parseInt(weight);
 
@@ -92,6 +96,8 @@ public class profile2 extends Fragment {
 
                 Map<String, Object> note = new HashMap<>();
                 Map<String, Object> note_weight = new HashMap<>();
+                Map<String, Object> note_his = new HashMap<>();
+
                 note.put(KEY_NAME, name);
                 note.put(KEY_AGE, age);
                 note.put(KEY_HEIGHT, height);
@@ -101,9 +107,21 @@ public class profile2 extends Fragment {
 
                 note_weight.put(KEY_WEIGHT, weight);
 
+                note_his.put(KEY_WEIGHT, weight);
+                note_his.put(KEY_WEIGHT_DATE, date);
+
+              String id3 = notref.getId();
+
+
+
+              db.collection(user.getEmail()).document("Profile").collection("Weight History").document(id3).set(note_his);
+
+
 
 
                 String id = dbref.push().getKey();
+
+
 
                 dbref.child(id).setValue(pointValue);
 
