@@ -77,7 +77,6 @@ public class home_frag extends Fragment {
 
         graphView.getGridLabelRenderer().setGridColor(Color.WHITE);
         graphView.getGridLabelRenderer().setGridStyle(GridLabelRenderer.GridStyle.NONE);
-        graphView.getViewport().setDrawBorder(true);
         graphView.getViewport().getYAxisBoundsStatus();
         graphView.getGridLabelRenderer().setHorizontalLabelsVisible(false);
 

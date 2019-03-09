@@ -28,6 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.auth.FirebaseUser;
 
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Date;
@@ -41,6 +42,7 @@ public class profile2 extends Fragment {
     private static final String KEY_TEAM = "Team";
     private static final String KEY_POSITION = "Position";
     private static final String KEY_TARGET_WEIGHT = "Target Weight";
+    private SimpleDateFormat sdf = new SimpleDateFormat ("dd:mm");
 
 
     private EditText mName;
@@ -80,7 +82,7 @@ public class profile2 extends Fragment {
                 String weight = mWeight.getText().toString();
                 String team = mTeam.getText().toString();
                 String position = mPosition.getText().toString();
-                long x = new Date().getTime();
+              int x = (int) new Date().getTime();
                 int y = Integer.parseInt(weight);
 
                 PointValue pointValue = new PointValue(x, y);
