@@ -1,6 +1,7 @@
 package com.example.first_and_goal;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.DocumentsContract;
@@ -27,6 +28,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.DataPointInterface;
@@ -65,8 +67,17 @@ public class home_frag extends Fragment {
 
 
         graphView.getGridLabelRenderer().setVerticalAxisTitle("Weight");
-        graphView.getViewport().getBorderColor();
+       graphView.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+       graphView.getGridLabelRenderer().setVerticalAxisTitleColor(Color.WHITE);
+       series.setColor(Color.WHITE);
+       series.setThickness(2);
+       graphView.setBackgroundColor(getResources().getColor(R.color.colorBlack));
 
+
+
+        graphView.getGridLabelRenderer().setGridColor(Color.WHITE);
+        graphView.getGridLabelRenderer().setGridStyle(GridLabelRenderer.GridStyle.NONE);
+        graphView.getViewport().setDrawBorder(true);
         graphView.getViewport().getYAxisBoundsStatus();
         graphView.getGridLabelRenderer().setHorizontalLabelsVisible(false);
 
