@@ -9,6 +9,7 @@
     android:background="@color/colorBlack"
     tools:context=".home_frag">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="110dp"
+        android:layout_marginBottom="170dp"
         app:seriesColor="@android:color/white" />
 
     <TextView
@@ -36,9 +37,40 @@
         android:layout_marginLeft="120dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="122dp"
         android:gravity="center_horizontal"
         android:text="View weight history"
         android:textColor="@android:color/white" />
+    <TextView
+        android:id="@+id/weightClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="122dp"
+        android:gravity="center_horizontal"
+        android:text="Close"
+        android:visibility="gone"
+        android:textColor="@android:color/white" />
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/weight_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="430dp"
+
+            android:background="@android:color/white"
+
+            android:scrollbars="horizontal" />
+
+
 
 </RelativeLayout>

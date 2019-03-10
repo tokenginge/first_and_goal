@@ -2,6 +2,7 @@ package com.example.first_and_goal;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,10 +10,12 @@ import android.provider.DocumentsContract;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -58,11 +61,11 @@ public class home_frag extends Fragment {
     private DatabaseReference weightref = db2.getReference(user.getUid()).child("Profile").child("Weight History");
     private SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm");
     private GraphView graphView;
-    private TextView weightHistory;
+    private TextView weightHistory, closeHistory;
     private LineGraphSeries series;
     private List<weight_upload> mUploads;
     private RecyclerView recyclerView;
-    private ImageAdapter imageAdapter;
+    private WeightAdapter imageAdapter;
 
 
 
@@ -72,10 +75,14 @@ public class home_frag extends Fragment {
 
         graphView = RootView.findViewById(R.id.weight_graph);
         weightHistory = RootView.findViewById(R.id.weightHist);
+        closeHistory = RootView.findViewById(R.id.weightClose);
+        recyclerView = RootView.findViewById(R.id.weight_recycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         series = new LineGraphSeries();
 
         graphView.addSeries(series);
         mUploads = new ArrayList<>();
+        final ArrayAdapter<weight_upload> listAdapter = new ArrayAdapter<weight_upload>(getActivity(), R.layout.support_simple_spinner_dropdown_item, mUploads);
 
 
 
@@ -112,7 +119,44 @@ public class home_frag extends Fragment {
 
         series.setAnimated(true);
 
+weightHistory.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(final View view) {
+        recyclerView.setVisibility(View.VISIBLE);
+        weightHistory.setVisibility(View.GONE);
+        closeHistory.setVisibility(View.VISIBLE);
+        weightref.addValueEventListener(new ValueEventListener() {
 
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    weight_upload upload = postSnapshot.getValue(weight_upload.class);
+                    mUploads.add(upload);
+                }
+
+                imageAdapter = new WeightAdapter(getActivity(), mUploads);
+                recyclerView.setAdapter(imageAdapter);
+
+
+                }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+});
+
+closeHistory.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        recyclerView.setVisibility(View.GONE);
+        closeHistory.setVisibility(View.GONE);
+        weightHistory.setVisibility(View.VISIBLE);
+    }
+});
 
 
 

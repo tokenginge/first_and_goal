@@ -27,7 +27,7 @@
         android:layout_height="80dp"
         android:layout_marginLeft="310dp"
         android:layout_marginTop="450dp"
-        android:src="@drawable/ic_workout"
+        android:src="@drawable/ic_add"
 
         />
 
