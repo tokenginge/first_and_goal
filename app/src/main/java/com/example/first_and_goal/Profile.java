@@ -103,7 +103,11 @@ public class Profile extends Fragment {
 
 
 
-                            if (targetweight.equals(weight) ){
+                            if (targetweight == "" || weight.equals("")) {
+
+                                Toast.makeText(getActivity(), "Nothing to compare", Toast.LENGTH_SHORT).show();
+                            }
+                                    else if (targetweight.equals(weight) ){
                                 AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
                                 dialog.setMessage("Well done! you have met your target weight");
                                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {

@@ -96,7 +96,7 @@
         android:layout_marginTop="260dp"
         android:layout_marginStart="130dp"
         android:layout_marginLeft="130dp"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:fontFamily="@font/twenty"/>
@@ -109,6 +109,7 @@
         android:layout_marginStart="190dp"
         android:layout_marginLeft="190dp"
         android:inputType="numberDecimal"
+        android:visibility="invisible"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:fontFamily="@font/twenty"/>

@@ -86,10 +86,22 @@ public class profile2 extends Fragment {
                 String team = mTeam.getText().toString();
                 String position = mPosition.getText().toString();
                 Date date = new SimpleDateFormat().get2DigitYearStart();
-              int x = (int) new Date().getTime();
-                int y = Integer.parseInt(weight);
 
-                PointValue pointValue = new PointValue(x, y);
+
+                if (weight.equals("")){
+                    Toast.makeText(getActivity(), "No weight entered", Toast.LENGTH_SHORT).show();
+                }
+                else  {
+                    int x = (int) new Date().getTime();
+                    int y = Integer.parseInt(weight);
+
+                    PointValue pointValue = new PointValue(x, y);
+
+                    String id = dbref.push().getKey();
+
+
+                    dbref.child(id).setValue(pointValue);
+                }
 
 
 
@@ -119,11 +131,6 @@ public class profile2 extends Fragment {
 
 
 
-                String id = dbref.push().getKey();
-
-
-
-                dbref.child(id).setValue(pointValue);
 
 
                 db.collection(user.getEmail()).document("Profile").set(note)
