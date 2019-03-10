@@ -25,7 +25,7 @@ public class splashscreen extends AppCompatActivity {
 
 
         config.getFooterTextView().setTextColor(Color.WHITE);
-       config.getLogo().setMaxHeight(400);
+       config.getLogo().setMaxHeight(View.getDefaultSize(400, 599));
         config.getLogo().setMaxWidth(400);
 
 

@@ -4,11 +4,11 @@ import java.text.SimpleDateFormat;
 
 public class PointValue {
      int xValue;
-    int yValue;
+    float yValue;
 
     public PointValue(){}
 
-    public PointValue(int xValue, int yValue){
+    public PointValue(int xValue, float yValue){
         this.xValue = xValue;
         this.yValue = yValue;
     }
@@ -17,7 +17,7 @@ public class PointValue {
         return xValue;
     }
 
-    public int getyValue(){
+    public float getyValue(){
         return yValue;
     }
 

@@ -56,7 +56,7 @@ public class profile2 extends Fragment {
     final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private DocumentReference notref = db.collection(user.getEmail()).document("Profile");
     private DatabaseReference dbref = db2.getReference(user.getUid()).child("Profile").child("Weight");
-   private DocumentReference weightHis;
+   private DatabaseReference weightHis = db2.getReference(user.getUid()).child("Profile").child("Weight History");
     private DocumentReference noteref2= db.collection(user.getEmail()).document("Profile").collection("Weight").document("Target Weight");
 
     @Override
@@ -85,7 +85,7 @@ public class profile2 extends Fragment {
                 String weight = mWeight.getText().toString();
                 String team = mTeam.getText().toString();
                 String position = mPosition.getText().toString();
-                Date date = new SimpleDateFormat().get2DigitYearStart();
+                String date = new Date().toString().trim();
 
 
                 if (weight.equals("")){
@@ -93,7 +93,7 @@ public class profile2 extends Fragment {
                 }
                 else  {
                     int x = (int) new Date().getTime();
-                    int y = Integer.parseInt(weight);
+                    float y = Float.parseFloat(weight);
 
                     PointValue pointValue = new PointValue(x, y);
 
@@ -102,6 +102,9 @@ public class profile2 extends Fragment {
 
                     dbref.child(id).setValue(pointValue);
                 }
+
+                weight_upload upload = new weight_upload(weight, date);
+                weightHis.child(date).setValue(upload);
 
 
 
@@ -122,7 +125,7 @@ public class profile2 extends Fragment {
                 note_his.put(KEY_WEIGHT, weight);
                 note_his.put(KEY_WEIGHT_DATE, date);
 
-              String id3 = notref.getId();
+              String id3 = String.valueOf(SystemClock.currentThreadTimeMillis());
 
 
 

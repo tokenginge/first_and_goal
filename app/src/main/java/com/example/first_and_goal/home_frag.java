@@ -1,5 +1,6 @@
 package com.example.first_and_goal;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.net.Uri;
@@ -8,11 +9,13 @@ import android.provider.DocumentsContract;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -37,8 +40,10 @@ import com.jjoe64.graphview.series.OnDataPointTapListener;
 import com.jjoe64.graphview.series.Series;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 
@@ -49,9 +54,15 @@ public class home_frag extends Fragment {
     private FirebaseDatabase db2 = FirebaseDatabase.getInstance();
     final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private DatabaseReference dbref = db2.getReference(user.getUid()).child("Profile").child("Weight");
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private DatabaseReference weightref = db2.getReference(user.getUid()).child("Profile").child("Weight History");
     private SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm");
     private GraphView graphView;
+    private TextView weightHistory;
     private LineGraphSeries series;
+    private List<weight_upload> mUploads;
+    private RecyclerView recyclerView;
+    private ImageAdapter imageAdapter;
 
 
 
@@ -60,9 +71,11 @@ public class home_frag extends Fragment {
         View RootView = inflater.inflate(R.layout.fragment_home_frag, container, false);
 
         graphView = RootView.findViewById(R.id.weight_graph);
+        weightHistory = RootView.findViewById(R.id.weightHist);
         series = new LineGraphSeries();
 
         graphView.addSeries(series);
+        mUploads = new ArrayList<>();
 
 
 
@@ -98,6 +111,7 @@ public class home_frag extends Fragment {
       //  });
 
         series.setAnimated(true);
+
 
 
 
@@ -139,6 +153,9 @@ public class home_frag extends Fragment {
 
 
             }
+
+
+
         }
 
 
