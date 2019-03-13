@@ -1,45 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/runninf"
+<RelativeLayout android:id="@+id/runninf"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/running">
+    android:background="@drawable/running"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <Chronometer
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
         android:textSize="40sp"
+        tools:fontFamily="@font/ubuntu_medium"
         android:id="@+id/mTimer"/>
 
     <TextView
-        android:textSize="40sp"
+        android:id="@+id/steps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/steps"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="154dp"
         android:gravity="center"
-        android:textColor="@android:color/black"/>
-
+        android:textColor="@android:color/black"
+        android:textSize="40sp" />
 
 
     <TextView
-        android:textSize="40sp"
+        android:id="@+id/miles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/miles"
+        android:layout_alignBaseline="@+id/prevsteps"
         android:gravity="center"
         android:textColor="@android:color/black"
-        />
+        android:textSize="40sp" />
 
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/btn_start"
         android:text="Start"
+        tools:fontFamily="@font/ubuntu_condensed_regular"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
         android:textColor="@android:color/white"
         android:background="@drawable/transparent_bg_rounf"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hapticFeedbackEnabled="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/progressBar"/>
 
     <Button
         android:layout_marginTop="8dp"
@@ -47,48 +60,60 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_stop"
         android:text="Save"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
         android:textColor="@android:color/white"
         android:background="@drawable/transparent_bg_rounf"/>
 
     <Button
         android:id="@+id/btn_back"
-        android:layout_width="200dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/transparent_bg_rounf"
         android:text="Home"
-        android:textColor="@android:color/white"
-
-        />
+        tools:fontFamily="@font/ubuntu_condensed_regular"
+        android:textColor="@android:color/white" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/prevsteps"
-        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="168dp"
+        android:layout_centerInParent="true"
         android:gravity="center"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
 
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/prevmiles"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:textColor="@android:color/black"/>
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/prevtime"
-        android:textSize="30sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="203dp"
         android:gravity="center"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/prevtime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="380dp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
 
 
 
 
 
 
-</LinearLayout>
+</RelativeLayout>

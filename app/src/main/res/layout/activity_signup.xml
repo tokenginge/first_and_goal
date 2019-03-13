@@ -41,7 +41,7 @@
                 android:textColorHint="@android:color/white"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                app:fontFamily="@font/twenty"/>
+                tools:fontFamily="@font/ubuntu_medium_italic"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -61,33 +61,34 @@
                 android:textColorHint="@android:color/white"
                 android:inputType="textPassword"
                 android:textColor="@android:color/white"
-                app:fontFamily="@font/twenty" />
+                tools:fontFamily="@font/ubuntu_medium_italic" />
 
         </android.support.design.widget.TextInputLayout>
 
 
         <Button
             android:id="@+id/sign_up_button"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
-            android:layout_marginLeft="60dp"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/rounded_button"
             android:text="Register"
             android:textColor="@android:color/white"
-            app:fontFamily="@font/twenty"
+            tools:fontFamily="@font/ubuntu_condensed_regular"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginStart="60dp" />
+            android:layout_marginTop="350dp"/>
 
         <Button
             android:id="@+id/btn_reset_password"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="400dp"
+            android:textSize="12sp"
             android:background="@null"
             android:text="Forgot your password?"
             android:textColor="@android:color/white"
-            app:fontFamily="@font/twenty"/>
+          tools:fontFamily="@font/ubuntu_condensed_regular"/>
 
 
         <Button
@@ -98,16 +99,16 @@
             android:background="@null"
             android:text="Already registered? Log in"
             android:textColor="@android:color/white"
-            app:fontFamily="@font/twenty"
-            android:textSize="15sp"/>
+            tools:fontFamily="@font/ubuntu_condensed_regular"
+            android:textSize="12sp"/>
     </RelativeLayout>
 
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center|bottom"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
         android:visibility="gone"/>
 
 </android.support.constraint.ConstraintLayout>

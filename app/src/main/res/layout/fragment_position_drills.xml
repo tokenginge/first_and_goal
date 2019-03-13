@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:background="@color/colorBlack"
-        app:fontFamily="@font/twenty"
+        tools:fontFamily="@font/ubuntu_condensed_regular"
         android:textColor="@android:color/white"/>
 
     <TextView
@@ -33,7 +33,7 @@
         android:text="Position"
         android:textColor="@android:color/white"
         android:textSize="50sp"
-        app:fontFamily="@font/twenty" />
+        tools:fontFamily="@font/ubuntu_bold"/>
 
     <Button
         android:id="@+id/btn_OL"
@@ -87,7 +87,6 @@
         android:textColor="@android:color/white"
         app:fontFamily="@font/twenty"
         android:layout_marginTop="8dp"
-        android:background="@drawable/te"
         android:text="Tight Ends"/>
 
     <Button
@@ -104,7 +103,6 @@
 
     <Button
         android:id="@+id/btn_DB"
-        android:background="@drawable/db"
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="150dp"

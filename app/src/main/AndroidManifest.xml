@@ -44,6 +44,10 @@
         <activity android:name=".LB_Drills" />
         <activity android:name=".QB_Drills" />
         <activity android:name=".post_splash"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
         android:textSize="30sp"
-        app:fontFamily="@font/twenty"/>
+        tools:fontFamily="@font/ubuntu_bold"/>
 
 
     <ProgressBar

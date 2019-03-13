@@ -1,5 +1,7 @@
 package com.example.first_and_goal;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +14,10 @@ import android.os.PowerManager;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,6 +51,7 @@ public class Running extends AppCompatActivity implements SensorEventListener, S
     private long pauseOffset;
     private boolean running;
     private PowerManager.WakeLock wakeLock;
+    private ProgressBar progressBar;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -66,6 +71,8 @@ protected void onCreate(Bundle savedInstanceState){
     PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
     wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
 
+
+    progressBar = findViewById(R.id.progressBar);
     Steps = findViewById(R.id.steps);
     miles = findViewById(R.id.miles);
     btn_start = findViewById(R.id.btn_start);
@@ -77,6 +84,27 @@ protected void onCreate(Bundle savedInstanceState){
     btn_home = findViewById(R.id.btn_back);
     mChron.setFormat("Time: %ss");
     mChron.setBase(SystemClock.elapsedRealtime());
+
+
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 100);
+        animation.setDuration(5000);
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) { }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                Toast.makeText(Running.this, "Good", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) { }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) { }
+        });
+        animation.start();
 
 
     btn_home.setOnClickListener(new View.OnClickListener() {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:text="Drills"
             android:textColor="@android:color/white"
             android:textSize="50sp"
-            app:fontFamily="@font/twenty" />
+            tools:fontFamily="@font/ubuntu_bold" />
 
     <Button
         android:id="@+id/btn_warm_up"
@@ -32,7 +32,7 @@
         android:text="Warm up"
         android:textColor="@android:color/white"
         android:textSize="50sp"
-        app:fontFamily="@font/twenty" />
+        android:fontFamily="@font/ubuntu_medium_italic" />
 
 
 
@@ -44,7 +44,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/agility"
         android:text="Agility"
-        app:fontFamily="@font/twenty"
+        android:fontFamily="@font/ubuntu_medium_italic"
         android:textSize="50sp"
         android:textColor="@android:color/white"/>
 
@@ -55,7 +55,7 @@
         android:layout_marginTop="8dp"
         android:text="Speed"
         android:background="@drawable/speed"
-        app:fontFamily="@font/twenty"
+        android:fontFamily="@font/ubuntu_medium_italic"
         android:textSize="50sp"
         android:textColor="@android:color/white"
         />
@@ -69,7 +69,7 @@
         android:textColor="@android:color/white"
         android:background="@drawable/pos"
         android:text="Position"
-        app:fontFamily="@font/twenty"/>
+        android:fontFamily="@font/ubuntu_medium_italic"/>
 
 
     </LinearLayout>

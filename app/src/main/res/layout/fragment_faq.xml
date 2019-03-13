@@ -15,7 +15,7 @@
         android:textColor="@android:color/white"
         android:layout_gravity="center_horizontal"
         android:textSize="30sp"
-        app:fontFamily="@font/twenty"/>
+        tools:fontFamily="@font/ubuntu_bold"/>
 
     <ExpandableListView
         android:layout_marginTop="50dp"
@@ -23,7 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@android:color/white"
-        android:dividerHeight="1dp"
+        android:childIndicator="@font/ubuntu"
+        android:childIndicatorEnd="@android:dimen/app_icon_size"
+        android:dividerHeight="3dp"
         android:padding="15dp"
         android:cacheColorHint="@android:color/white"
         android:choiceMode="singleChoice"
