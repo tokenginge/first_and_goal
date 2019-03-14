@@ -24,6 +24,7 @@
         android:text="Workouts"
         android:layout_gravity="center_horizontal"
         android:textSize="30sp"
+        android:fontFamily="@font/ubuntu_bold"
         android:textColor="@android:color/white"/>
 
     <TextView
@@ -34,14 +35,18 @@
         android:layout_marginTop="20dp"
         android:drawableRight="@drawable/ic_edit"
         android:drawablePadding="16dp"
+        android:fontFamily="@font/ubuntu_medium"
         android:textColor="@android:color/white"
-        android:text="Workout 1" />
+        android:text="Workout 1"
+        android:textSize="17sp"
+        android:drawableEnd="@drawable/ic_edit" />
 
     <ImageView
         android:id="@+id/btn_workout_1"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:background="@drawable/pos" />
+        android:background="@drawable/work1"
+        />
 
     <TextView
         android:id="@+id/workout2"
@@ -49,15 +54,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:drawableRight="@drawable/ic_settings"
+        android:drawableEnd="@drawable/ic_edit"
+        android:textColor="@android:color/white"
         android:drawablePadding="16dp"
-        android:text="Workout 2" />
+        android:text="Workout 2"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textSize="17sp"
+        android:drawableRight="@drawable/ic_edit" />
 
     <ImageView
         android:id="@+id/btn_workout_2"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:background="@drawable/pos" />
+        android:background="@drawable/work2" />
 
     <TextView
         android:id="@+id/workout3"
@@ -65,9 +74,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:drawableRight="@drawable/ic_settings"
+        android:drawableRight="@drawable/ic_edit"
         android:drawablePadding="16dp"
-        android:text="Workout 3" />
+        android:text="Workout 3"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textSize="17sp"
+        android:textColor="@android:color/white"
+        android:drawableEnd="@drawable/ic_edit" />
 
     <ImageView
         android:id="@+id/btn_workout_3"
@@ -81,9 +94,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:drawableRight="@drawable/ic_settings"
+        android:drawableRight="@drawable/ic_edit"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@android:color/white"
+        android:textSize="17sp"
         android:drawablePadding="16dp"
-        android:text="Workout 4" />
+        android:text="Workout 4"
+        android:drawableEnd="@drawable/ic_edit" />
 
     <ImageView
         android:id="@+id/btn_workout_4"
@@ -97,9 +114,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:drawableRight="@drawable/ic_settings"
+        android:drawableRight="@drawable/ic_edit"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textSize="17sp"
         android:drawablePadding="16dp"
-        android:text="Workout 5" />
+        android:text="Workout 5"
+        android:drawableEnd="@drawable/ic_edit" />
 
     <ImageView
         android:id="@+id/btn_workout_5"

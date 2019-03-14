@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:textColor="@android:color/white"
         android:textSize="10sp"
-        tools:fontFamily="@font/ubuntu_condensed_regular"
+        android:fontFamily="@font/ubuntu_condensed_regular"
         android:layout_height="wrap_content"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
         android:paddingTop="10dp"

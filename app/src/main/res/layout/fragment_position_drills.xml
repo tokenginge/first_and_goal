@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:background="@color/colorBlack"
-        tools:fontFamily="@font/ubuntu_condensed_regular"
+        android:fontFamily="@font/ubuntu_condensed_regular"
         android:textColor="@android:color/white"/>
 
     <TextView
@@ -33,7 +33,7 @@
         android:text="Position"
         android:textColor="@android:color/white"
         android:textSize="50sp"
-        tools:fontFamily="@font/ubuntu_bold"/>
+        android:fontFamily="@font/ubuntu_bold"/>
 
     <Button
         android:id="@+id/btn_OL"
@@ -43,14 +43,14 @@
         android:background="@drawable/ol"
         android:textColor="@android:color/white"
         android:textSize="40sp"
-        app:fontFamily="@font/twenty"/>
+        android:fontFamily="@font/ubuntu_medium_italic"/>
 
     <Button
         android:id="@+id/btn_QBs"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:textColor="@android:color/white"
-        app:fontFamily="@font/twenty"
+        android:fontFamily="@font/ubuntu_medium_italic"
         android:layout_marginTop="8dp"
         android:textSize="40sp"
         android:text="Quaterbacks"
@@ -66,7 +66,7 @@
         android:background="@drawable/rb"
         android:textColor="@android:color/white"
         android:textSize="40sp"
-        app:fontFamily="@font/twenty" />
+        android:fontFamily="@font/ubuntu_medium_italic" />
 
     <Button
         android:id="@+id/btn_wide_rec"
@@ -77,15 +77,16 @@
         android:layout_marginTop="8dp"
         android:textSize="40sp"
         android:textColor="@android:color/white"
-        app:fontFamily="@font/twenty"/>
+        android:fontFamily="@font/ubuntu_medium_italic"/>
 
     <Button
         android:id="@+id/btn_TE"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:textSize="40sp"
+        android:background="@drawable/te"
         android:textColor="@android:color/white"
-        app:fontFamily="@font/twenty"
+        android:fontFamily="@font/ubuntu_medium_italic"
         android:layout_marginTop="8dp"
         android:text="Tight Ends"/>
 
@@ -98,7 +99,7 @@
         android:background="@drawable/dl"
         android:textSize="40sp"
         android:textColor="@android:color/white"
-        app:fontFamily="@font/twenty"/>
+        android:fontFamily="@font/ubuntu_medium_italic"/>
 
 
     <Button
@@ -109,7 +110,8 @@
         android:text="Defensive Backs"
         android:textSize="40sp"
         android:textColor="@android:color/white"
-        app:fontFamily="@font/twenty"/>
+        android:background="@drawable/db"
+        android:fontFamily="@font/ubuntu_medium_italic"/>
 
 
     <Button
@@ -118,7 +120,7 @@
         android:layout_height="150dp"
         android:textSize="40sp"
         android:textColor="@android:color/white"
-        app:fontFamily="@font/twenty"
+        android:fontFamily="@font/ubuntu_medium_italic"
         android:layout_marginTop="8dp"
         android:text="Linebackers"
         android:background="@drawable/lb"/>

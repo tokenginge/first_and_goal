@@ -7,6 +7,7 @@
     tools:context=".profile2"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@color/colorBlack"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <TextView
@@ -15,49 +16,83 @@
         android:layout_height="wrap_content"
         android:text="Edit Profile"
         android:textSize="40sp"
-        app:fontFamily="@font/twenty"
+        android:fontFamily="@font/ubuntu_bold"
+        android:textColor="@android:color/white"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_back"
-        android:text="Back"/>
 
-    <EditText
-        android:id="@+id/edit_name"
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="-50dp"
+        android:text="Back"
+        android:textColor="@android:color/white"
+        android:background="@color/colorBlack"
+        android:fontFamily="@font/ubuntu_condensed_regular"/>
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:inputType="text"/>
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/ubuntu_medium_italic"
+            android:textColorHint="@android:color/white"
+            android:hint="Name"
+            android:inputType="text" />
+
+
+
     <EditText
         android:id="@+id/edit_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Age"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium_italic"
+        android:textColorHint="@android:color/white"/>
 
     <EditText
         android:id="@+id/edit_height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Height (CM)"
-        android:inputType="number"/>
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium_italic"
+        android:textColorHint="@android:color/white"/>
 
     <EditText
         android:id="@+id/edit_weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Weight (KG)"
-        android:inputType="numberDecimal"/>
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium_italic"
+        android:textColorHint="@android:color/white"/>
 
     <EditText
         android:id="@+id/edit_team"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Team"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium_italic"
+        android:textColorHint="@android:color/white"/>
 
     <EditText
         android:id="@+id/edit_position"
@@ -65,12 +100,22 @@
         android:layout_height="wrap_content"
         android:textAllCaps="true"
         android:hint="Position"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium_italic"
+        android:textColorHint="@android:color/white"/>
+
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/t_Weight"
-        android:text="Target Weight"/>
+        android:text="Target Weight"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColorHint="@android:color/white"
+        android:background="@drawable/rounded_button"
+        />
 
     <EditText
         android:layout_width="match_parent"
@@ -78,20 +123,34 @@
         android:visibility="gone"
         android:id="@+id/enter_target_weight"
         android:hint="Target Weight (KG)"
-        android:inputType="numberDecimal"/>
+        android:inputType="numberDecimal"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium_italic"
+        android:textColorHint="@android:color/white"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:text="Save Target Weight"
-        android:id="@+id/save_target_weight"/>
+        android:id="@+id/save_target_weight"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium"
+        android:background="@drawable/rounded_button"
+        android:textColorHint="@android:color/white"
+        />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="save"
-        android:id="@+id/save"/>
+        android:id="@+id/save"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium_italic"
+        android:textColorHint="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button"/>
+    </LinearLayout>
 
 </LinearLayout>
 

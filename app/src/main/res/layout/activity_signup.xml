@@ -41,7 +41,7 @@
                 android:textColorHint="@android:color/white"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                tools:fontFamily="@font/ubuntu_medium_italic"/>
+                android:fontFamily="@font/ubuntu_medium_italic"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -61,7 +61,7 @@
                 android:textColorHint="@android:color/white"
                 android:inputType="textPassword"
                 android:textColor="@android:color/white"
-                tools:fontFamily="@font/ubuntu_medium_italic" />
+                android:fontFamily="@font/ubuntu_medium_italic" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -74,7 +74,7 @@
             android:background="@drawable/rounded_button"
             android:text="Register"
             android:textColor="@android:color/white"
-            tools:fontFamily="@font/ubuntu_condensed_regular"
+            android:fontFamily="@font/ubuntu_condensed_regular"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="350dp"/>
@@ -88,7 +88,7 @@
             android:background="@null"
             android:text="Forgot your password?"
             android:textColor="@android:color/white"
-          tools:fontFamily="@font/ubuntu_condensed_regular"/>
+          android:fontFamily="@font/ubuntu_condensed_regular"/>
 
 
         <Button
@@ -99,7 +99,7 @@
             android:background="@null"
             android:text="Already registered? Log in"
             android:textColor="@android:color/white"
-            tools:fontFamily="@font/ubuntu_condensed_regular"
+            android:fontFamily="@font/ubuntu_condensed_regular"
             android:textSize="12sp"/>
     </RelativeLayout>
 

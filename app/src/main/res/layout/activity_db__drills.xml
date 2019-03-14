@@ -16,7 +16,7 @@
         android:text="DB Drills"
         android:textColor="@android:color/white"
         android:textSize="30sp"
-        app:fontFamily="@font/ubuntu_bold" />
+        android:fontFamily="@font/ubuntu_bold" />
 
 
     <ProgressBar

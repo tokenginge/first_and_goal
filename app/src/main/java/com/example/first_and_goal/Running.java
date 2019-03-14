@@ -140,6 +140,8 @@ protected void onCreate(Bundle savedInstanceState){
     btn_start.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            btn_start.setVisibility(View.GONE);
+            btn_save.setVisibility(View.VISIBLE);
             numSteps = 0;
             mManager.registerListener(Running.this, mSensor, SensorManager.SENSOR_DELAY_FASTEST);
 
@@ -158,6 +160,8 @@ protected void onCreate(Bundle savedInstanceState){
     btn_save.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            btn_save.setVisibility(View.GONE);
+            btn_start.setVisibility(View.VISIBLE);
             mManager.unregisterListener(Running.this);
             String steps = Steps.getText().toString();
             String Mmiles = miles.getText().toString();
