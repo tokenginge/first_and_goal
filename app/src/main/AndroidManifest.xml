@@ -43,11 +43,13 @@
         <activity android:name=".TE_Drills" />
         <activity android:name=".LB_Drills" />
         <activity android:name=".QB_Drills" />
-        <activity android:name=".post_splash"></activity>
+        <activity android:name=".post_splash" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".exercise"></activity>
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class workout extends Fragment {
     private static final String KEY_WORK_3 = "Workout 3";
     private static final String KEY_WORK_4 = "Workout 4";
     private static final String KEY_WORK_5 = "Workout 5";
+    private Button workout;
     private  Map<String, Object> note = new HashMap<>();
 
     @Override
@@ -58,6 +60,16 @@ public class workout extends Fragment {
         btn_work4 = RootView.findViewById(R.id.btn_workout_4);
         workout5 = RootView.findViewById(R.id.workout5);
         btn_work5 = RootView.findViewById(R.id.btn_workout_5);
+        workout = RootView.findViewById(R.id.workours);
+
+
+        workout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity (new Intent (getActivity(), exercise.class));
+
+            }
+        });
 
 
 
