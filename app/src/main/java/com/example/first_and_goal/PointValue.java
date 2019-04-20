@@ -3,17 +3,17 @@ package com.example.first_and_goal;
 import java.text.SimpleDateFormat;
 
 public class PointValue {
-     int xValue;
+     long xValue;
     float yValue;
 
     public PointValue(){}
 
-    public PointValue(int xValue, float yValue){
+    public PointValue(long xValue, float yValue){
         this.xValue = xValue;
         this.yValue = yValue;
     }
 
-    public int getxValue(){
+    public long getxValue(){
         return xValue;
     }
 

@@ -1,126 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@+id/runninf"
+<android.support.constraint.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/runninf"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/running"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:home="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/run_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toBottomOf="@id/btn_close"
+        android:background="@android:color/darker_gray"
+        android:scrollbars="horizontal"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="37dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_big"
+        style="?android:progressBarStyleHorizontal"
+
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="68dp"
+        android:progress="0"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@id/mTimer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+
+    <Button
+        android:id="@+id/btn_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous"
+        android:textSize="15sp"
+        android:background="@color/colorBlack"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_condensed_regular"
+        tools:layout_editor_absoluteX="296dp"
+        tools:layout_editor_absoluteY="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:textSize="15sp"
+        android:background="@color/colorBlack"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_condensed_regular"
+        tools:layout_editor_absoluteX="296dp"
+        tools:layout_editor_absoluteY="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
 
     <Chronometer
         android:id="@+id/mTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
         android:fontFamily="@font/ubuntu_medium"
-        android:layout_above="@+id/steps"
-        android:layout_marginBottom="6dp"
-        android:textSize="40sp" />
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="257dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/steps"/>
+
 
     <TextView
         android:id="@+id/steps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginBottom="170dp"
-        android:textColor="@android:color/black"
-        android:textSize="40sp"
         android:fontFamily="@font/ubuntu_medium"
-        android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="318dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/miles"/>
 
 
     <TextView
         android:id="@+id/miles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:fontFamily="@font/ubuntu_medium"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="170dp"
-        android:textColor="@android:color/black"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
         android:textSize="40sp"
-        android:layout_alignParentLeft="true"
-        />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="382dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_start"/>
+
+    <TextView
+        android:id="@+id/tMiles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="192dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/miles"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
         android:id="@+id/btn_start"
-        android:text="Start"
-        android:fontFamily="@font/ubuntu_condensed_regular"
-        android:textSize="20sp"
-        android:layout_marginTop="130dp"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/ubuntu_condensed_regular"
+        android:text="Start"
         android:textColor="@android:color/white"
-        android:background="@drawable/transparent_bg_rounf"/>
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_stop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 
     <Button
-        android:layout_marginTop="130dp"
+        android:id="@+id/btn_stop"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_stop"
-        android:text="Save"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/rounded_button"
         android:fontFamily="@font/ubuntu_condensed_regular"
-        android:textSize="20sp"
+        android:text="Save"
+        android:visibility="invisible"
         android:textColor="@android:color/white"
-        android:background="@drawable/transparent_bg_rounf"/>
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/btn_back"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-130dp"
-        android:background="@drawable/transparent_bg_rounf"
-        android:text="Home"
+        android:background="@color/colorBlack"
         android:fontFamily="@font/ubuntu_condensed_regular"
+        android:text="Home"
         android:textColor="@android:color/white" />
 
-    <TextView
-        android:id="@+id/prevsteps"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="190dp"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:fontFamily="@font/ubuntu_medium"
-        android:textColor="@android:color/black"
-        android:textSize="30sp" />
-
-
-    <TextView
-        android:id="@+id/prevmiles"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="240dp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:gravity="center"
-        android:textColor="@android:color/black"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/prevtime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:gravity="center"
-        android:textColor="@android:color/black"
-        android:textSize="30sp" />
 
 
 
 
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

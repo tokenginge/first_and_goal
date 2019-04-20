@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator">
 
 
 <ScrollView
@@ -18,10 +25,7 @@
     android:orientation="vertical"
     android:layout_gravity="center_horizontal">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/workours"/>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,7 +95,7 @@
         android:id="@+id/btn_workout_3"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:background="@drawable/pos"/>
+        android:background="@drawable/work3"/>
 
     <TextView
         android:id="@+id/workout4"
@@ -111,7 +115,7 @@
         android:id="@+id/btn_workout_4"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:background="@drawable/pos"/>
+        android:background="@drawable/work4"/>
 
     <TextView
         android:id="@+id/workout5"
@@ -131,13 +135,14 @@
         android:id="@+id/btn_workout_5"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:background="@drawable/pos" />
+        android:background="@drawable/work5" />
 
 
 
     </LinearLayout>
 
 </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
 
 
 

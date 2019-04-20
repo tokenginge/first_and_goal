@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="3dp"
+    android:background="@color/colorBlack"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:background="@color/colorBlack"
+        android:fontFamily="@font/ubuntu_condensed_regular"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-20dp"
+        android:padding="2dp"
+        android:text="Warm up"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        android:fontFamily="@font/ubuntu_bold"/>
+
+    <Button
+        android:id="@+id/btn_Static"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Static"
+        android:background="@drawable/stat"
+        android:layout_marginTop="50dp"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:fontFamily="@font/ubuntu_medium_italic"/>
+
+    <Button
+        android:id="@+id/btn_Dyn"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/ubuntu_medium_italic"
+        android:layout_marginTop="50dp"
+        android:textSize="40sp"
+        android:text="Dynamic"
+        android:background="@drawable/dyna"/>
+
+
+
+
+
+
+
+
+</LinearLayout>

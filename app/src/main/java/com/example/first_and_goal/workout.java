@@ -4,10 +4,13 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,8 +46,9 @@ public class workout extends Fragment {
     private static final String KEY_WORK_3 = "Workout 3";
     private static final String KEY_WORK_4 = "Workout 4";
     private static final String KEY_WORK_5 = "Workout 5";
-    private Button workout;
+
     private  Map<String, Object> note = new HashMap<>();
+    private CoordinatorLayout coordinatorLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,16 +64,13 @@ public class workout extends Fragment {
         btn_work4 = RootView.findViewById(R.id.btn_workout_4);
         workout5 = RootView.findViewById(R.id.workout5);
         btn_work5 = RootView.findViewById(R.id.btn_workout_5);
-        workout = RootView.findViewById(R.id.workours);
+
+        coordinatorLayout = RootView.findViewById(R.id.coordinator);
+
+        showSnackbar();
 
 
-        workout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity (new Intent (getActivity(), exercise.class));
 
-            }
-        });
 
 
 
@@ -89,7 +90,7 @@ public class workout extends Fragment {
                         String work1 = input.getText().toString();
                         note.put(KEY_WORK_1, work1);
                         workout1.setText(work1);
-                        workref.update(note);
+                        workref.set(note);
                     }
                 });
                 dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -276,7 +277,6 @@ public class workout extends Fragment {
             public void onClick(View view) {
                 workout_1 newfrag2 = new workout_1();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.flContent, newfrag2, null).commit();
-
             }
         });
 
@@ -288,6 +288,49 @@ public class workout extends Fragment {
             }
         });
 
+        btn_work3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                workout_3 newfrag2 = new workout_3();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.flContent, newfrag2, null).commit();
+
+            }
+        });
+
+        btn_work4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                workout_4 newfrag2 = new workout_4();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.flContent, newfrag2, null).commit();
+
+            }
+        });
+
+        btn_work5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                workout_5 newfrag2 = new workout_5();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.flContent, newfrag2, null).commit();
+
+            }
+        });
+
         return RootView;
     }
+    public void showSnackbar() {
+        Snackbar snackbar = Snackbar.make(coordinatorLayout,"Need ideas for exercises?", Snackbar.LENGTH_INDEFINITE).setAction("Click here", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity (new Intent (getActivity(), exercise.class));
+            }
+        }).setActionTextColor(Color.WHITE);
+
+        View snackView = snackbar.getView();
+        TextView textView = snackView.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setTextColor(Color.WHITE);
+
+
+        snackbar.show();
+    }
+
 }

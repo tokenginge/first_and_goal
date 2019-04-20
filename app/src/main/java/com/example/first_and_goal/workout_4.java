@@ -44,7 +44,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickListener {
+public class workout_4 extends Fragment implements ImageAdapter.OnMenuItemClickListener {
 
     private TextView workout1;
     private FloatingActionButton addWorkout;
@@ -63,8 +63,8 @@ public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickL
 
     final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private DocumentReference workref = db.collection(user.getEmail()).document("Workouts");
-    private DocumentReference workoutref = db.collection(user.getEmail()).document("Workouts").collection("number").document("1");
-    private static final String KEY_WORK_1 = "Workout 1";
+    private DocumentReference workoutref = db.collection(user.getEmail()).document("Workouts").collection("number").document("4");
+    private static final String KEY_WORK_1 = "Workout 4";
     private static final String KEY_RATE = "Rating";
     private static final String KEY_TIME = "Time";
     private static final String KEY_NOTES = "Notes";
@@ -72,12 +72,12 @@ public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickL
     private  Map<String, Object> note = new HashMap<>();
     private ValueEventListener mDBListener;
 
-    private DatabaseReference dbref = db2.getReference(user.getUid()).child("Workout").child("1");
+    private DatabaseReference dbref = db2.getReference(user.getUid()).child("Workout").child("4");
     private DatabaseReference mData = db2.getReference(user.getUid()).child("Workout");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View RootView = inflater.inflate(R.layout.fragment_workout_1, container, false);
+        View RootView = inflater.inflate(R.layout.fragment_workout_4, container, false);
 
         workout1 = RootView.findViewById(R.id.workout1);
         addWorkout = RootView.findViewById(R.id.addWorkout);
@@ -88,17 +88,22 @@ public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickL
         start = RootView.findViewById(R.id.btn_start);
         pause = RootView.findViewById(R.id.btn_pause);
         save = RootView.findViewById(R.id.btn_save);
-        back = RootView.findViewById(R.id.btn_back);
         chronometer = RootView.findViewById(R.id.chronometer);
         chronometer.setFormat("%ss");
         chronometer.setBase(SystemClock.elapsedRealtime());
         coordinatorLayout = RootView.findViewById(R.id.coordinator);
+        back = RootView.findViewById(R.id.btn_back);
         save.setVisibility(View.INVISIBLE);
 
 
 
 
         mUploads = new ArrayList<>();
+
+
+
+
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,13 +117,7 @@ public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickL
 
 
 
-
-
-
-
-
-
-       mDBListener = dbref.addValueEventListener(new ValueEventListener() {
+        mDBListener = dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -130,7 +129,7 @@ public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickL
                 }
                 imageAdapter = new ImageAdapter(getActivity(), mUploads);
                 recyclerView.setAdapter(imageAdapter);
-                imageAdapter.setOnMenuItemClickListener(workout_1.this);
+                imageAdapter.setOnMenuItemClickListener(workout_4.this);
                 progressBar.setVisibility(View.INVISIBLE);
 
             }
@@ -182,7 +181,7 @@ public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickL
                                 }
                                 else {
 
-                                    tv1.setText("Last time you completed " + past_num +" exercise in " + past_time + " . Well done!" );
+                                    tv1.setText("Last time you completed " + past_num +  " exercise in " + past_time + " . Well done!" );
                                 }
 
                                 if(mPas == 2.5 || mPas == 3.0  || mPas == 3.5|| mPas == 4.0  || mPas == 4.5 || mPas == 5.0 ){
@@ -217,7 +216,7 @@ public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickL
                     });
 
                 } else {
-                    Toast.makeText(getActivity(), "Not yet completed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "No such thing", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -374,7 +373,7 @@ public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickL
                                 save.setVisibility(View.INVISIBLE);
 
 
-                                workref.collection("number").document("1").set(note);
+                                workref.collection("number").document("4").set(note);
                                 showSnackbar();
                                 chronometer.setBase(SystemClock.elapsedRealtime());
                                 pauseoffSet = 0;
@@ -443,15 +442,15 @@ public class workout_1 extends Fragment implements ImageAdapter.OnMenuItemClickL
 
 
     public void onDeleteClick(int position){
-       workout_upload selectedItem = mUploads.get(position);
-       final String selectedKey = selectedItem.getKey();
+        workout_upload selectedItem = mUploads.get(position);
+        final String selectedKey = selectedItem.getKey();
 
         dbref.child(selectedKey).removeValue();
         Toast.makeText(getActivity(), "Item deleted", Toast.LENGTH_SHORT).show();
 
     }
 
-    }
+}
 
 
 

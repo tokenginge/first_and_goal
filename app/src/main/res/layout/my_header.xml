@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#3F51B5"
+    android:background="@color/colorBlack"
     android:padding="16dp">
 
     <ImageView
@@ -11,7 +11,8 @@
         android:background="#FFF"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/logo"
+        android:backgroundTint="@color/colorBlack"/>
 
     <LinearLayout
         android:layout_marginTop="20dp"
@@ -23,6 +24,7 @@
             android:textSize="18sp"
             android:textColor="#FFF"
             android:text="First &amp; Goal"
+            android:fontFamily="@font/ubuntu_bold"
             android:layout_width="120dp"
             android:layout_height="wrap_content" />
 
@@ -31,6 +33,7 @@
             android:textSize="14sp"
             android:textColor="#FFF"
             android:text="Menu"
+            android:fontFamily="@font/ubuntu_medium_italic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

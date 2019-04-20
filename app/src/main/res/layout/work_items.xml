@@ -19,10 +19,11 @@
    >
 
 <ImageView
+    android:id="@+id/options"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_weight="15"
-    android:src="@drawable/ic_profile"/>
+    android:src="@drawable/ic_vert"/>
 
 
         <CheckedTextView
@@ -30,10 +31,11 @@
             android:layout_width="0dp"
             android:layout_weight="70"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             android:clickable="true"
             android:checked="true"
+            android:checkMarkTint="@android:color/white"
             android:checkMark="?android:attr/listChoiceIndicatorMultiple"/>
 
     </LinearLayout>

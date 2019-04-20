@@ -61,7 +61,7 @@ public class home_frag extends Fragment {
     private DatabaseReference weightref = db2.getReference(user.getUid()).child("Profile").child("Weight History");
     private SimpleDateFormat sdf = new SimpleDateFormat ("hh:mm");
     private GraphView graphView;
-    private TextView weightHistory, closeHistory;
+    private TextView weightHistory, closeHistory, weightGraph, closeWeightGraph;
     private LineGraphSeries series;
     private List<weight_upload> mUploads;
     private RecyclerView recyclerView;
@@ -77,12 +77,16 @@ public class home_frag extends Fragment {
         weightHistory = RootView.findViewById(R.id.weightHist);
         closeHistory = RootView.findViewById(R.id.weightClose);
         recyclerView = RootView.findViewById(R.id.weight_recycler);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         series = new LineGraphSeries();
 
         graphView.addSeries(series);
         mUploads = new ArrayList<>();
         final ArrayAdapter<weight_upload> listAdapter = new ArrayAdapter<weight_upload>(getActivity(), R.layout.support_simple_spinner_dropdown_item, mUploads);
+
+
+
 
 
 
@@ -102,22 +106,12 @@ public class home_frag extends Fragment {
 
 
 
+
+
         graphView.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getActivity()));
 
-        //{
-          //  @Override
-            //public String formatLabel(double value, boolean isValueX) {
-//
-  //              if (isValueX){
-    //                return sdf.format(new Date((long) value));
-      //          }
-        //            else {
-//
-  //              return super.formatLabel(value, isValueX);}
-    //        }
-      //  });
 
-        series.setAnimated(true);
+
 
 weightHistory.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -129,6 +123,7 @@ weightHistory.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                mUploads.clear();
 
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     weight_upload upload = postSnapshot.getValue(weight_upload.class);
@@ -184,7 +179,7 @@ closeHistory.setOnClickListener(new View.OnClickListener() {
                 series.setOnDataPointTapListener(new OnDataPointTapListener() {
                     @Override
                     public void onTap(Series series, DataPointInterface dataPoint) {
-                        Toast.makeText(getActivity(), "point"+dataPoint, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "point" + dataPoint, Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -196,7 +191,7 @@ closeHistory.setOnClickListener(new View.OnClickListener() {
         });
 
 
-            }
+    }
 
 
 

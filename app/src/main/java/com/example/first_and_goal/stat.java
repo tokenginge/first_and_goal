@@ -1,9 +1,9 @@
 package com.example.first_and_goal;
 
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -21,7 +21,7 @@ import java.util.List;
 
 //Code adapted form coding in flow tutorial
 
-public class Speed_drills extends AppCompatActivity {
+public class stat extends AppCompatActivity {
     private RecyclerView mRecyler;
     private DrillItemsAdapter mAdapt;
     private ProgressBar progressBar;
@@ -31,7 +31,7 @@ public class Speed_drills extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_speed_drills);
+        setContentView(R.layout.activity_stat);
 
         mRecyler = findViewById(R.id.recycler_view);
         mRecyler.setHasFixedSize(true);
@@ -41,7 +41,7 @@ public class Speed_drills extends AppCompatActivity {
 
         mDrills = new ArrayList<>();
 
-        mDataRef = FirebaseDatabase.getInstance().getReference("Speed");
+        mDataRef = FirebaseDatabase.getInstance().getReference("Static");
 
         mDataRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -50,7 +50,7 @@ public class Speed_drills extends AppCompatActivity {
                     Drillitems drills = postSnapshot.getValue(Drillitems.class);
                     mDrills.add(drills);
                 }
-                mAdapt = new DrillItemsAdapter(Speed_drills.this, mDrills);
+                mAdapt = new DrillItemsAdapter(stat.this, mDrills);
 
                 mRecyler.setAdapter(mAdapt);
                 progressBar.setVisibility(View.INVISIBLE);
@@ -59,7 +59,7 @@ public class Speed_drills extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(Speed_drills.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(stat.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.INVISIBLE);
 
             }

@@ -37,11 +37,12 @@ public class Profile extends Fragment {
     private static final String TAG = "Profile";
     private static final String KEY_NAME = "Name";
     private static final String KEY_AGE ="Age";
-    private static final String KEY_HEIGHT = "Height";
+    private static final String KEY_HEIGHT = "Height (ft)";
     private static final String KEY_WEIGHT = "Weight";
     private static final String KEY_TEAM = "Team";
     private static final String KEY_POSITION = "Position";
     private static final String KEY_TARGET_WEIGHT = "Target Weight";
+    private static final String KEY_HEIGHT_2 = "Height (in)";
     private Button edit;
     private TextView profName;
     private TextView profAge;
@@ -50,6 +51,7 @@ public class Profile extends Fragment {
     private TextView profTeam;
     private TextView tWeight;
     private TextView profPos;
+    private TextView profHeight2;
     final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private DocumentReference notref = db.collection(user.getEmail()).document("Profile");
@@ -67,6 +69,7 @@ public class Profile extends Fragment {
         profTeam = RootView.findViewById(R.id.prof_team);
         profPos = RootView.findViewById(R.id.prof_pos);
         tWeight = RootView.findViewById(R.id.weight_dif);
+        profHeight2 = RootView.findViewById(R.id.prof_height_2);
 
 
 
@@ -88,6 +91,7 @@ public class Profile extends Fragment {
                     final String weight = documentSnapshot.getString(KEY_WEIGHT);
                     String team = documentSnapshot.getString(KEY_TEAM);
                     String pos = documentSnapshot.getString(KEY_POSITION);
+                    String height2 = documentSnapshot.getString(KEY_HEIGHT_2);
 
                     profName.setText(name);
                     profAge.setText(age);
@@ -95,6 +99,7 @@ public class Profile extends Fragment {
                     profTeam.setText(team);
                     profPos.setText(pos);
                     profWeight.setText(weight);
+                    profHeight2.setText(height2);
                     weightref.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -103,32 +108,42 @@ public class Profile extends Fragment {
 
 
 
-                            if (targetweight == "" || weight.equals("")) {
+                            if (targetweight == "" || weight == "") {
 
                                 Toast.makeText(getActivity(), "Nothing to compare", Toast.LENGTH_SHORT).show();
                             }
-                                    else if (targetweight.equals(weight) ){
-                                AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
-                                dialog.setMessage("Well done! you have met your target weight");
-                                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                    else {
+                                assert targetweight != null;
+                                if (targetweight.equals(weight) && targetweight != ""){
+                            AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+                            dialog.setMessage("Well done! you have met your target weight");
+                            dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
 
-                                    }
-                                });
-                                dialog.setCancelable(true);
-                                dialog.create().show();
-
-
-                            }
-                            else{
-                                Toast.makeText(getActivity(), "Not yet at target weight!", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            dialog.setCancelable(true);
+                            dialog.create().show();
 
 
+                        }
+                        else{
+                            Toast.makeText(getActivity(), "Not yet at target weight!", Toast.LENGTH_SHORT).show();
 
+
+
+                        }
                             }
                         }
-                    });
+
+                    }).addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(getActivity(), "Tell DAN!!", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                    );
 
 
 
@@ -153,6 +168,8 @@ public class Profile extends Fragment {
 
         return RootView;
     }
+
+
 }
 
 

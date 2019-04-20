@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -48,6 +49,7 @@ public class exercise extends AppCompatActivity {
         mDrills = new ArrayList<>();
 
         mDataRef = FirebaseDatabase.getInstance().getReference("Exercise");
+
 
         mDataRef.addValueEventListener(new ValueEventListener() {
             @Override

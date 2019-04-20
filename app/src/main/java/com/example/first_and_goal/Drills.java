@@ -1,5 +1,6 @@
 package com.example.first_and_goal;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -26,7 +27,7 @@ import android.widget.Button;
 
 public class Drills extends Fragment {
 
-    private Button Speed, pos, warm;
+    private Button Speed, pos, warm, agile;
 
     public Drills(){}
 
@@ -39,14 +40,18 @@ public class Drills extends Fragment {
         Speed =  RootView.findViewById(R.id.btn_Speed);
         warm = RootView.findViewById(R.id.btn_warm_up);
         pos =  RootView.findViewById(R.id.btn_Position);
+        agile = RootView.findViewById(R.id.btn_agility);
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+        dialog.setMessage("Make sure you have warmed up!");
+        dialog.setCancelable(true);
+        dialog.show();
 
 
         Speed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Speed_drills newfrag = new Speed_drills();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.flContent, newfrag, null).commit();
-
+                startActivity(new Intent(getActivity(), Speed_drills.class));
             }
         });
 
@@ -56,6 +61,23 @@ public class Drills extends Fragment {
                 position_drills newfrag2 = new position_drills();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.flContent, newfrag2, null).commit();
 
+
+            }
+        });
+
+        warm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                warmup_type newfrag = new warmup_type();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.flContent, newfrag, null).commit();
+
+            }
+        });
+
+        agile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), agility_drills.class));
 
             }
         });

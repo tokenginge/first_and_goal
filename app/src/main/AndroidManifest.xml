@@ -44,12 +44,19 @@
         <activity android:name=".LB_Drills" />
         <activity android:name=".QB_Drills" />
         <activity android:name=".post_splash" />
+        <activity android:name=".dynamic" />
+        <activity android:name=".stat" />
+        <receiver android:name=".AlertReceiver"/>
+        <activity android:name=".Settings"/>
+        <activity android:name=".agility_drills"/>
+        <activity android:name=".Speed_drills"/>
+
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".exercise"></activity>
+        <activity android:name=".exercise" />
     </application>
 
 </manifest>

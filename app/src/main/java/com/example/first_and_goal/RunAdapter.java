@@ -5,31 +5,29 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckedTextView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
-public class WeightAdapter extends RecyclerView.Adapter<WeightAdapter.ImageViewHolder2> {
+public class RunAdapter extends RecyclerView.Adapter<RunAdapter.ImageViewHolder2> {
     private Context mcontext;
-    private List<weight_upload> mUploads;
+    private List<running_upload> mUploads;
 
-    public WeightAdapter(Context context, List<weight_upload> uploads){
+    public RunAdapter(Context context, List<running_upload> uploads){
         mcontext = context;
         mUploads = uploads;
     }
 
     @Override
     public ImageViewHolder2 onCreateViewHolder (ViewGroup parent, int viewType){
-        View v = LayoutInflater.from(mcontext).inflate(R.layout.weight_items, parent, false);
+        View v = LayoutInflater.from(mcontext).inflate(R.layout.run_items, parent, false);
         return new ImageViewHolder2(v);
     }
 
     @Override
     public void onBindViewHolder(final ImageViewHolder2 holder, int position){
-        final weight_upload uploadNow = mUploads.get(position);
-        holder.textViewWork.setText(uploadNow.getWeight() + " kg at " + uploadNow.getDate());
+        final running_upload uploadNow = mUploads.get(position);
+        holder.textViewWork.setText(uploadNow.getSteps() + " " + uploadNow.getMiles() + " " + uploadNow.getTime() + " " + uploadNow.getDate());
 
 
 
@@ -44,8 +42,7 @@ public class WeightAdapter extends RecyclerView.Adapter<WeightAdapter.ImageViewH
 
     public class ImageViewHolder2 extends RecyclerView.ViewHolder{
         public TextView textViewWork;
-        public TextView textViewSets;
-        public TextView textViewReps;
+
 
 
 

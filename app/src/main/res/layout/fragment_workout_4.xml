@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="40sp"
-            android:text="Workout 2"
+            android:text="Workout 4"
             android:textColor="@android:color/white"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/ubuntu_bold"

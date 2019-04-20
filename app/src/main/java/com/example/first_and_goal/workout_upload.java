@@ -1,9 +1,12 @@
 package com.example.first_and_goal;
 
+import com.google.firebase.database.Exclude;
+
 public class workout_upload {
     private String mWork;
     private String mSets;
     private String mReps;
+    private String mKey;
 
     public workout_upload(){}
 
@@ -39,5 +42,15 @@ public class workout_upload {
     }
     public void setReps(String reps){
         mReps = reps;
+    }
+
+    @Exclude
+    public String getKey(){
+        return mKey;
+    }
+
+    @Exclude
+    public void setKey(String key){
+        mKey = key;
     }
 }

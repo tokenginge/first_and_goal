@@ -78,7 +78,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
                 break;
 
             case R.id.set:
-                getSupportFragmentManager().beginTransaction().replace(R.id.flContent, new Settings()).commit();
+                startActivity(new Intent(home.this, Settings.class));
                 break;
 
             case R.id.step:
@@ -110,7 +110,8 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Toast.makeText(this, "Cannot exit with back button", Toast.LENGTH_SHORT).show();
+
         }
     }
 }

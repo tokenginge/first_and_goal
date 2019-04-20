@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 public class forgotpassword extends AppCompatActivity {
 
     private TextInputLayout inputEmail;
-    private Button btnReset, btnBack;
+    private Button btnReset;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
 
@@ -30,19 +30,13 @@ public class forgotpassword extends AppCompatActivity {
 
 
 
-        inputEmail = (TextInputLayout)findViewById(R.id.email);
-        btnReset = (Button) findViewById(R.id.btn_reset_password);
-        btnBack = (Button) findViewById(R.id.btn_back);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        inputEmail = findViewById(R.id.email);
+        btnReset = findViewById(R.id.btn_reset_password);
+        progressBar =  findViewById(R.id.progressBar);
 
         auth=FirebaseAuth.getInstance();
 
-        btnBack.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick (View v){
-                finish();
-            }
-        });
+
 
         btnReset.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -74,6 +68,16 @@ public class forgotpassword extends AppCompatActivity {
 
 
 
+
+
     }
+
+    @Override
+    public void onBackPressed(){
+
+       finish();
+    }
+
+
 
 }
