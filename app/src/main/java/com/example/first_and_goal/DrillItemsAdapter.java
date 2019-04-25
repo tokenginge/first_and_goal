@@ -9,9 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 //code adapted from coding in flow tutorial
@@ -19,7 +17,6 @@ import java.util.List;
 public class DrillItemsAdapter extends RecyclerView.Adapter<DrillItemsAdapter.ImageViewHolder>{
     private Context mContext;
     private List<Drillitems> mDrills;
-
     public DrillItemsAdapter(Context context, List<Drillitems> drills){
         mContext = context;
         mDrills = drills;
@@ -47,10 +44,8 @@ public class DrillItemsAdapter extends RecyclerView.Adapter<DrillItemsAdapter.Im
     public class ImageViewHolder extends RecyclerView.ViewHolder{
         public TextView textViewName;
         public ImageView imageView;
-
         public ImageViewHolder(View itemView){
             super(itemView);
-
             textViewName = itemView.findViewById(R.id.text_view_name);
             imageView = itemView.findViewById(R.id.image_uploaded_view);
         }
